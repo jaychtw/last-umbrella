@@ -56,7 +56,7 @@ export function buildScene(){
  }
  oval('Left sleeve',[-24,114,1],[17,39,19],'ac6742',hips);
  const arm=group('Following hand',[0,0,0],actor);
- oval('Right sleeve',[0,0,0],[17,30,17],'a25a37',arm);oval('Fingers',[1,-15,2],[13,14,11],'d5a17b',arm);
+ oval('Right sleeve',[4,0,0],[14,27,14],'a25a37',arm);oval('Fingers',[-4,-15,2],[10,11,9],'d5a17b',arm);
  const umb=group('Umbrella',[0,0,0]);
  post('Handle',[0,78,0],[4,17,4],'b78c56',umb);oval('Handle cap',[0,88,0],[6,5,6],'cf9e62',umb);
  mesh('Folded fabric','cone',[0,39,0],[18,66,18],'293c48',umb,Math.PI);

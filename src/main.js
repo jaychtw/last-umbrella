@@ -36,11 +36,11 @@ async function boot(){
   for(let i=0;i<40;i++)set('Strap '+i,p.strap(i));
   for(let i=0;i<2;i++){const a=p.walkSwing*(i?-1:1)/2;set('Leg '+i,null,{x:Math.sin(a),y:0,z:0,w:Math.cos(a)})}
   const tx=close?p.ux:0,ty=close?p.uy+78:110,tz=close?28:0;
-  const d=(close?67:345)*Math.max(1,(close?.9:1.55)/(canvas.width/canvas.height));
+  const d=(close?93:360)*Math.max(1,(close?.9:1.55)/(canvas.width/canvas.height));
   const pitch=close?.21:.15,yaw=Math.max(-1.04,Math.min(1.04,angle));angle=yaw;
   set('Camera',[tx+d*Math.sin(yaw)*Math.cos(pitch),ty+d*Math.sin(pitch),tz+d*Math.cos(yaw)*Math.cos(pitch)],
    {x:-Math.sin(pitch/2)*Math.cos(yaw/2),y:Math.sin(yaw/2)*Math.cos(pitch/2),z:Math.sin(yaw/2)*Math.sin(pitch/2),w:Math.cos(yaw/2)*Math.cos(pitch/2)});
-  app.tick(1/60);
+  return app.tick(1/60);
  };
  function resize(){const r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio,1.5);canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);updateCameraAspectRatio(app.world,canvas.width/canvas.height);drawScene()}
  new ResizeObserver(resize).observe(canvas);resize();

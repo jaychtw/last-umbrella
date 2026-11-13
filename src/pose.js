@@ -12,7 +12,7 @@ export function pose(t){
   const loose=(f-used)*26;
   return [Math.cos(a)*4.8+loose*.78,79-used*8-loose*.52,Math.sin(a)*4.8+loose*.30];
  }
- const tip=strap(39), hand=[ux+tip[0]-x,uy+tip[1]+15,tip[2]+3];
+ const tip=strap(39), hand=[ux+tip[0]-x+5,uy+tip[1]+15,tip[2]-5];
  hand[0]=mix(hand[0],25,exit);hand[1]=mix(hand[1],108,exit);
  return {x,ux,uy,hand,strap,walkSwing:Math.sin(t*6.8)*(1-ease((t-2.1)/.6))*.26,wrap};
 }
